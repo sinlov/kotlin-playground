@@ -1,0 +1,26 @@
+subprojects {
+    apply plugin: 'idea'
+
+    ext {
+        test_implement = [
+                junit                      : 'junit:junit:4.12',
+                org_testng_testng          : 'org.testng:testng:6.0.1',
+                okhttp3_logging_interceptor: 'com.squareup.okhttp3:logging-interceptor:3.8.0@jar',
+        ]
+
+        security_depend = [
+                // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on
+                org_bouncycastle_bcprov_jdk15on: 'org.bouncycastle:bcprov-jdk15on:1.60',
+                // https://mvnrepository.com/artifact/org.bouncycastle/bcpg-jdk15on
+                org_bouncycastle_bcpg_jdk15on  : 'org.bouncycastle:bcpg-jdk15on:1.60',
+        ]
+
+        base_depend = [
+                commons_cli                    : 'commons-cli:commons-cli:1.3.1',
+                org_json_json                  : 'org.json:json:20180130',
+                org_apache_commons_commons_lang: 'org.apache.commons:commons-lang3:3.5',
+                commons_codec_commons_codec    : 'commons-codec:commons-codec:1.13',
+                com_java_faker : 'com.github.javafaker:javafaker:1.0.2',
+        ]
+    }
+}

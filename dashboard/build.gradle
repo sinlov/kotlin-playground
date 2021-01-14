@@ -1,0 +1,19 @@
+
+dependencies {
+//     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // testCompile test_implement.junit
+    testImplementation test_implement.junit
+
+    // compile base_depend.commons_cli
+    implementation base_depend.commons_codec_commons_codec
+    implementation base_depend.org_json_json
+    implementation base_depend.com_java_faker
+    // compileOnly base_depend.commons_cli
+}
+
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
