@@ -1,0 +1,13 @@
+// https://pitest.org/
+import java.lang.management.*
+apply plugin: 'info.solidsoft.pitest'
+
+pitest {
+    targetClasses = [
+            'com.xxx.*',
+    ]
+//    threads = Runtime.getRuntime().availableProcessors()
+    threads = ManagementFactory.operatingSystemMXBean.availableProcessors
+    outputFormats = ['XML', 'HTML']
+    avoidCallsTo = ["kotlin.jvm.internal", "kotlinx.coroutines"]
+}

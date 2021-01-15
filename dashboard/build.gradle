@@ -1,8 +1,8 @@
 //apply plugin: "kotlin2js"
 apply plugin: 'kotlin-kapt'
 apply plugin: 'info.solidsoft.pitest'
-
 apply from: rootProject.file("gradle/jacoco/jacoco-simple.gradle")
+apply from: rootProject.file("gradle/code_quality/detekt.gradle")
 
 dependencies {
 
@@ -59,7 +59,7 @@ pitest {
     targetClasses = [
             'com.sinlov.kotlin.playground.dashboard.*',
     ]
-    threads = 4
+    threads = Runtime.getRuntime().availableProcessors()
     outputFormats = ['XML', 'HTML']
     avoidCallsTo = ["kotlin.jvm.internal", "kotlinx.coroutines"]
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>NewLineAtEndOfFile:KotlinVariable.kt$com.sinlov.kotlin.playground.dashboard.KotlinVariable.kt</ID>
+  </CurrentIssues>
+</SmellBaseline>
