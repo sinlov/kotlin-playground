@@ -8,27 +8,33 @@
 apply from: rootProject.file("package.gradle")
 
 buildscript {
+    ext.kotlin_version = '1.4.21'
+//    ext.jacoco_version = '0.8.6' // https://www.eclemma.org/jacoco/
+
     repositories {
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         jcenter()
     }
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
     }
     dependencies {
-//        classpath 'eu.appsatori:gradle-fatjar-plugin:0.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.5.1'
     }
 }
 
 
 allprojects {
     repositories {
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         jcenter()
     }
     apply plugin: 'java'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
+
+    apply plugin: "kotlin"
 }
 
 // above gradle 3.+

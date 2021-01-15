@@ -1,0 +1,63 @@
+// https://docs.gradle.org/current/userguide/jacoco_plugin.html
+// https://docs.gradle.org/current/dsl/org.gradle.testing.jacoco.plugins.JacocoPluginExtension.html
+// https://docs.gradle.org/current/dsl/org.gradle.testing.jacoco.plugins.JacocoTaskExtension.html
+apply plugin: 'jacoco'
+
+def excludes = [
+        '**/R.class',
+        '**/R$*.class',
+        '**/android/databinding/*',
+        '**/*$ViewInjector*.*',
+        '**/*$ViewBinder*.*',
+        '**/BuildConfig.*',
+        '**/*Application*.*',
+        '**/*Component*.*',
+        '**/UiUtils.*',
+        '**/*Binding*.*',
+        '**/*Retrofit*.*',
+        '**/*BR*.*',
+        '**/io/realm/*',
+        '**/*Rx*.*',
+        '**/Manifest*.*',
+        '**/*$Lambda$*.*',
+        '**/*Module.*',
+        '**/*Dagger*.*',
+        '**/*MembersInjector*.*',
+        '**/*_Provide*Factory*.*',
+        '**/*_Factory*.*',
+]
+
+def jacoco_version = "0.8.6"
+
+jacoco {
+    toolVersion = jacoco_version
+//    def javaClass = fileTree(dir: "${buildDir}/classes/java/main", excludes: excludes)
+//    def kotlinClasses = fileTree(dir: "${buildDir}/classes/kotlin/main", excludes: excludes)
+    excludes = [
+            excludes,
+            "**/com/sinlov/kotlin/javamock/*",
+    ]
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.enabled true
+        html.destination file("$buildDir/reports/jacocoHtml")
+    }
+//    reportsDirectory = file("$buildDir/customJacocoReportDir")
+
+}
+//test.finalizedBy jacocoTestReport
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                // Should be increased till 80% (0.8)
+                minimum = 0.2
+            }
+        }
+    }
+}
+//jacocoTestReport.finalizedBy jacocoTestCoverageVerification

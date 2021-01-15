@@ -18,8 +18,17 @@ dashboardDependCompileClasspath:
 dashboardDependentComponents:
 	./gradlew :$(dashboardGradleName):dependentComponents
 
+dashboardClean:
+	./gradlew :$(dashboardGradleName):clean
+
 dashboardTest:
 	./gradlew :$(dashboardGradleName):test
+
+dashboardJacocoTestReport:
+	./gradlew :$(dashboardGradleName):jacocoTestReport
+
+dashboardPiTest:
+	./gradlew :$(dashboardGradleName):pitest
 
 help-dashboard-gradle:
 	@echo "=> $(dashboardGradleName)/z-gradle.mk : gradle $(dashboardGradleName) task"
@@ -29,5 +38,8 @@ help-dashboard-gradle:
 	@echo "make dashboardDependDefault          -> $(dashboardGradleName) dependencies of default"
 	@echo "make dashboardDependCompileClasspath -> $(dashboardGradleName) dependencies of compileClasspath"
 	@echo "make dashboardDependentComponents    -> $(dashboardGradleName) dependentComponents"
+	@echo "make dashboardClean                  -> $(dashboardGradleName) clean"
 	@echo "make dashboardTest                   -> $(dashboardGradleName) test case"
+	@echo "make dashboardJacocoTestReport       -> $(dashboardGradleName) test jacocoTestReport"
+	@echo "make dashboardPiTest                 -> $(dashboardGradleName) pitest"
 	@echo ""
