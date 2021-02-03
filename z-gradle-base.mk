@@ -1,6 +1,6 @@
 # init this project
 init:
-	./gradlew clean buildEnvironment
+	./gradlew buildEnvironment --warning-mode all
 
 cleanRoot:
 	./gradlew clean
