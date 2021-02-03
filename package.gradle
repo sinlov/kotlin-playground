@@ -14,6 +14,7 @@ subprojects {
 
         test_implement = [
                 junit                                     : 'junit:junit:4.12',
+                org_junit_vintage_junit_vintage_engine    : 'org.junit.vintage:junit-vintage-engine:5.1.0',
                 org_testng_testng                         : 'org.testng:testng:6.0.1',
                 okhttp3_logging_interceptor               : 'com.squareup.okhttp3:logging-interceptor:3.8.0@jar',
                 // https://kotest.io/

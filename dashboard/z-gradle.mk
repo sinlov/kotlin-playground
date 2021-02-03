@@ -6,6 +6,9 @@ dashboardTasks:
 dashboardTasksAll:
 	./gradlew :$(dashboardGradleName):tasks --all
 
+dashboardClean:
+	./gradlew :$(dashboardGradleName):clean
+
 dashboardDependencies:
 	./gradlew :$(dashboardGradleName):dependencies
 
@@ -18,11 +21,11 @@ dashboardDependCompileClasspath:
 dashboardDependentComponents:
 	./gradlew :$(dashboardGradleName):dependentComponents
 
-dashboardClean:
-	./gradlew :$(dashboardGradleName):clean
-
 dashboardTest:
 	./gradlew :$(dashboardGradleName):test
+
+dashboardTestInfo: dashboardClean
+	@./gradlew :$(dashboardGradleName):test --info
 
 dashboardJacocoTestReport:
 	./gradlew :$(dashboardGradleName):jacocoTestReport

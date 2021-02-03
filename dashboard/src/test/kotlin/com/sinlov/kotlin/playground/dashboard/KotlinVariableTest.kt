@@ -16,9 +16,14 @@ class KotlinVariableTest : FunSpec({
         println("kotlinVariable.hashCode: ${kotlinVariable.hashCode()}")
     }
 
-    test("sum") {
+    test("sum one") {
         val sum = kotlinVariable.sum(100, 200)
         sum shouldBe 300
+    }
+
+    test("sum two") {
+        val sum = kotlinVariable.sum(200, 300)
+        sum shouldBe 500
     }
 
 

@@ -1,4 +1,8 @@
+[![Java-CI-with-Gradle](https://github.com/sinlov/kotlin-playground/workflows/Java-CI-with-Gradle/badge.svg?branch=main)](https://github.com/sinlov/kotlin-playground/actions?query=workflow%3AJava-CI-with-Gradle)
+
 # This is kotlin playground
+
+- [https://github.com/sinlov/kotlin-playground](https://github.com/sinlov/kotlin-playground)
 
 ## env
 

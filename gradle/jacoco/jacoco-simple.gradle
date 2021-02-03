@@ -40,6 +40,10 @@ jacoco {
 }
 
 jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+
+jacocoTestReport {
     reports {
         xml.enabled false
         csv.enabled false

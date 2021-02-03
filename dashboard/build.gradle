@@ -11,6 +11,8 @@ dependencies {
 //     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // testCompile test_implement.junit
     testImplementation test_implement.junit
+    // https://docs.gradle.org/4.6/release-notes.html
+    testRuntimeOnly test_implement.org_junit_vintage_junit_vintage_engine
     // https://kotest.io/docs/quickstart
     testImplementation test_implement.io_kotest_kotest_runner_junit5
     // Pitest https://kotest.io/docs/framework/plugins.html
@@ -47,10 +49,6 @@ test {
     }
     jacoco {
 //        enabled = false
-        includeNoLocationClasses = false
-        excludes = [
-                "**/com/sinlov/kotlin/javamock/*"
-        ]
     }
 }
 
