@@ -1,0 +1,6 @@
+<project>
+    <modules>
+        <module>dashboard/</module>
+        <module>designpatterns/</module>
+    </modules>
+</project>
