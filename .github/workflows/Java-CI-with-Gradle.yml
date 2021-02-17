@@ -32,3 +32,7 @@ jobs:
       run: ./gradlew dashboard:jacocoTestReport
     - name: Build with Gradle designpatterns jacocoTestReport
       run: ./gradlew designpatterns:jacocoTestReport
+    - name: Codecov
+      uses: codecov/codecov-action@v1.0.6
+      with:
+        token: ${{secrets.CODECOV_TOKEN}}
