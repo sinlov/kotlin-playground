@@ -1,0 +1,64 @@
+//apply plugin: "kotlin2js"
+apply plugin: 'kotlin-kapt'
+apply plugin: 'info.solidsoft.pitest'
+apply from: rootProject.file("gradle/jacoco/jacoco-simple.gradle")
+apply from: rootProject.file("gradle/code_quality/detekt.gradle")
+
+dependencies {
+
+    kapt "com.google.dagger:dagger-compiler:2.23.2"
+
+//     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // testCompile test_implement.junit
+    testImplementation test_implement.junit
+    // https://docs.gradle.org/4.6/release-notes.html
+    testRuntimeOnly test_implement.org_junit_vintage_junit_vintage_engine
+    // https://kotest.io/docs/quickstart
+    // https://github.com/kotest/kotest-intellij-plugin
+    testImplementation test_implement.io_kotest_kotest_runner_junit5
+    // Pitest https://kotest.io/docs/framework/plugins.html
+    testImplementation test_implement.io_kotest_kotest_plugins_pitest
+    // assertions library kotest
+    testImplementation test_implement.io_kotest_kotest_assertions_core
+    // property testing
+    testImplementation test_implement.io_kotest_kotest_property
+
+    // https://www.spekframework.org/setup-jvm/
+//    testImplementation test_implement.org_jetbrains_spek_spek_api
+//    testImplementation test_implement.org_spekframework_spek2_spek_dsl_jvm
+//    testRuntimeOnly test_implement.org_spekframework_spek2_spek_runner_junit5
+    // spek requires kotlin-reflect, can be omitted if already in the classpath
+//    testRuntimeOnly test_implement.org_jetbrains_kotlin_kotlin_reflect
+
+    // compile base_depend.commons_cli
+    implementation base_depend.commons_codec_commons_codec
+    implementation base_depend.org_json_json
+    implementation base_depend.com_java_faker
+    // compileOnly base_depend.commons_cli
+//    implementation kotlin_depend.org_jetbrains_kotlin_kotlin_stdlib_jdk8
+}
+
+
+// setup the test task
+test {
+    testLogging {
+        exceptionFormat = 'full'
+        events "PASSED", "FAILED", "SKIPPED"
+    }
+    useJUnitPlatform {
+//        includeEngines "spek2"
+    }
+    jacoco {
+//        enabled = false
+    }
+}
+
+pitest {
+    testPlugin = "Kotest"
+    targetClasses = [
+            'com.sinlov.kotlin.design.patterns.*',
+    ]
+    threads = Runtime.getRuntime().availableProcessors()
+    outputFormats = ['XML', 'HTML']
+    avoidCallsTo = ["kotlin.jvm.internal", "kotlinx.coroutines"]
+}

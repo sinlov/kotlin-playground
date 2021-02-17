@@ -2,6 +2,6 @@
 <SmellBaseline>
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
-    <ID>NewLineAtEndOfFile:KotlinVariable.kt$com.sinlov.kotlin.playground.dashboard.KotlinVariable.kt</ID>
+    <ID>NewLineAtEndOfFile:KotlinVariable.kt$com.sinlov.kotlin.design.patterns.KotlinVariable.kt</ID>
   </CurrentIssues>
 </SmellBaseline>

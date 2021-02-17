@@ -10,7 +10,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -30,3 +30,5 @@ jobs:
       run: ./gradlew dashboard:pitest
     - name: Build with Gradle dashboard jacocoTestReport
       run: ./gradlew dashboard:jacocoTestReport
+    - name: Build with Gradle designpatterns jacocoTestReport
+      run: ./gradlew designpatterns:jacocoTestReport

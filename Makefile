@@ -8,6 +8,7 @@ TOP_DIR := $(shell pwd)
 
 include z-gradle-base.mk
 include dashboard/z-gradle.mk
+include designpatterns/z-gradle.mk
 
-help: helpGradleBase help-dashboard-gradle
+help: helpGradleBase help-dashboard-gradle help-designpatterns-gradle
 	@echo "more task see makefile!"
