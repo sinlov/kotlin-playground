@@ -8,7 +8,7 @@
 apply from: rootProject.file("package.gradle")
 
 buildscript {
-    ext.kotlin_version = '1.4.21'
+    ext.kotlin_version = '1.4.30'
 //    ext.jacoco_version = '0.8.6' // https://www.eclemma.org/jacoco/
 
     repositories {
@@ -29,16 +29,29 @@ buildscript {
 allprojects {
     repositories {
 //        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
-        jcenter()
+        mavenCentral()
+//        jcenter()
     }
     apply plugin: 'java'
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+
     tasks.withType(JavaCompile) {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
         options.encoding = "UTF-8"
     }
 
     apply plugin: "kotlin"
+    compileKotlin {
+        kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
+    }
+    compileTestKotlin {
+        kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
+    }
+    kotlin {
+        experimental {
+            coroutines "enable"
+        }
+    }
 }
 
 // above gradle 3.+
