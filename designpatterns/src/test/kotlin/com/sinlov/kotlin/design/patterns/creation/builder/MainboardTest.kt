@@ -41,4 +41,11 @@ class MainboardTest : FunSpec({
     test("keyboard") {
         mainboard.keyboard shouldBe "logitech"
     }
+
+    test("change funCount") {
+        val other = Mainboard.Builder("intel", "Samsung")
+            .setFunCount(6)
+            .build()
+        other.funCount shouldBe 6
+    }
 })

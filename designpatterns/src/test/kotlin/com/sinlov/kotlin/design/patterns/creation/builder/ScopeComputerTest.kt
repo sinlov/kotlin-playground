@@ -39,4 +39,14 @@ class ScopeComputerTest : FunSpec({
     test("display") {
         computer.display shouldBe "Dell"
     }
+
+    test("default usbCount") {
+        val now = ScopeComputer.build {
+            setCpu("intel")
+            setRam("Samsung")
+            setDisplay("Dell")
+            setKeyboard("logitech")
+        }
+        now.usbCount shouldBe 0
+    }
 })

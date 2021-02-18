@@ -16,5 +16,8 @@ class SimpleFruitsFactoryTest : FunSpec({
         fruit?.eat() shouldBe "eat Pear"
         fruit = simpleFactory.createFruit(SimpleFruitsFactory.BANANA)
         fruit?.eat() shouldBe "eat Banana"
+
+        val grape = simpleFactory.createFruit("grape")
+        grape shouldBe null
     }
 })
