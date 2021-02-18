@@ -1,15 +1,15 @@
-package com.sinlov.kotlin.design.patterns.singleton
+package com.sinlov.kotlin.design.patterns.creation.singleton
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 
-class DoubleCheckSingletonTest : FunSpec({
+class ThreadSafeLazySingletonTest : FunSpec({
 
-    test("Thread get DoubleCheckSingletonTest") {
+    test("Thread get LazySingletonTest") {
         var tssHash = 0
         for (i in 1..100) {
             val runnable = Runnable {
-                val now = DoubleCheckSingleton.instance
+                val now = ThreadSafeLazySingleton.get()
                 if (tssHash == 0) {
                     tssHash = now.hashCode()
                 }
@@ -20,6 +20,7 @@ class DoubleCheckSingletonTest : FunSpec({
     }
 
     test("ThreadSafeLazySingleton method") {
-        DoubleCheckSingleton.instance.objectName() shouldBe "DoubleCheckSingleton"
+        ThreadSafeLazySingleton.get().objectName() shouldBe "ThreadSafeLazySingleton"
     }
+
 })

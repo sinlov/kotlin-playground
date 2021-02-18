@@ -1,4 +1,4 @@
-package com.sinlov.kotlin.design.patterns.singleton
+package com.sinlov.kotlin.design.patterns.creation.singleton
 
 class DoubleCheckPPSingleton private constructor(private val property: Int) {
 

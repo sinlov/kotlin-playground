@@ -1,4 +1,4 @@
-package com.sinlov.kotlin.design.patterns.singleton
+package com.sinlov.kotlin.design.patterns.creation.singleton
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
