@@ -1,22 +1,20 @@
 package com.sinlov.kotlin.design.patterns.creation.factorymethod
 
-abstract class SimpleFruits {
-    abstract fun eat(): String
-}
+import com.sinlov.kotlin.design.patterns.creation.Fruits
 
-class SimpleApple : SimpleFruits() {
+class Apple : Fruits() {
     override fun eat(): String {
         return "eat Apple"
     }
 }
 
-class SimplePear : SimpleFruits() {
+class Pear : Fruits() {
     override fun eat(): String {
         return "eat Pear"
     }
 }
 
-class SimpleBanana : SimpleFruits() {
+class Banana : Fruits() {
     override fun eat(): String {
         return "eat Banana"
     }
@@ -25,19 +23,19 @@ class SimpleBanana : SimpleFruits() {
 
 class SimpleFruitsFactory {
     companion object {
-        val APPLE = "Apple"
-        val PEAR = "Pear"
-        val BANANA = "Banana"
+        const val APPLE = "Apple"
+        const val PEAR = "Pear"
+        const val BANANA = "Banana"
     }
 
-    fun createFruit(fruitType: String): SimpleFruits? {
+    fun createFruit(fruitType: String): Fruits? {
         when (fruitType) {
             APPLE ->
-                return SimpleApple()
+                return Apple()
             PEAR ->
-                return SimplePear()
+                return Pear()
             BANANA ->
-                return SimpleBanana()
+                return Banana()
         }
         return null
     }
