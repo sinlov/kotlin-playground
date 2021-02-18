@@ -42,10 +42,18 @@ allprojects {
 
     apply plugin: "kotlin"
     compileKotlin {
-        kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_1_8
+//            freeCompilerArgs = ['-Xjsr305=strict']
+//            javaParameters = true
+        }
     }
     compileTestKotlin {
-        kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_1_8
+//            freeCompilerArgs = ['-Xjsr305=strict']
+//            javaParameters = true
+        }
     }
     kotlin {
         experimental {
