@@ -21,6 +21,10 @@ class Banana : Fruits() {
 
 }
 
+/**
+ * for Class
+ * @see <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">Wikipedia Factory_method_pattern</a>
+ */
 class SimpleFruitsFactory {
     companion object {
         const val APPLE = "Apple"

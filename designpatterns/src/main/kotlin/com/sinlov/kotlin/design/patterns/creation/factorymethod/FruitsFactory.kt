@@ -2,6 +2,10 @@ package com.sinlov.kotlin.design.patterns.creation.factorymethod
 
 import com.sinlov.kotlin.design.patterns.creation.Fruits
 
+/**
+ * for Class
+ * @see <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">Wikipedia Factory_method_pattern</a>
+ */
 abstract class FruitsFactory {
     abstract fun createFruit(): Fruits
 }

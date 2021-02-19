@@ -1,5 +1,9 @@
 package com.sinlov.kotlin.design.patterns.creation.builder
 
+/**
+ * for Object
+ * @see <a href="https://en.wikipedia.org/wiki/Builder_pattern">Wikipedia Builder_pattern</a>
+ */
 data class DSLUser(
     var id: String = "",
     var username: String = "mine",

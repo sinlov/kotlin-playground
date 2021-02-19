@@ -37,6 +37,10 @@ class AcerFactory : AbstractGenericFactory() {
     override fun product() = Acer()
 }
 
+/**
+ * for Object
+ * @see <a href="https://en.wikipedia.org/wiki/Abstract_factory_pattern">Wikipedia Abstract_factory_pattern</a>
+ */
 abstract class AbstractGenericFactory {
     abstract fun product(): Computer
 

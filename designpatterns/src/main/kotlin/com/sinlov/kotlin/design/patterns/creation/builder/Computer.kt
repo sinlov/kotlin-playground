@@ -1,5 +1,9 @@
 package com.sinlov.kotlin.design.patterns.creation.builder
 
+/**
+ * for Object
+ * @see <a href="https://en.wikipedia.org/wiki/Builder_pattern">Wikipedia Builder_pattern</a>
+ */
 class Computer private constructor(
     val cpu: String,
     val ram: String,

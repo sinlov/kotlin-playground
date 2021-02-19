@@ -14,6 +14,10 @@ class GiftApple : Apple() {
     }
 }
 
+/**
+ * for Object
+ * @see <a href="https://en.wikipedia.org/wiki/Abstract_factory_pattern">Wikipedia Abstract_factory_pattern</a>
+ */
 abstract class AbstractFruitsFactory {
 
     abstract fun createSimpleFruits(): Fruits
