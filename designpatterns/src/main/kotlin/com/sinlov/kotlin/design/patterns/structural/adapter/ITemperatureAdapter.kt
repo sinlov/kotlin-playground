@@ -4,7 +4,7 @@ import java.math.RoundingMode
 import java.text.DecimalFormat
 
 /**
- * for class
+ * for Class or Object
  * @see <a href="https://en.wikipedia.org/wiki/Adapter_pattern">wiki Adapter_pattern</a>
  */
 interface ITemperatureAdapter {

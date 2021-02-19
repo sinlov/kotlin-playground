@@ -5,6 +5,11 @@
 
 - [https://github.com/sinlov/kotlin-playground](https://github.com/sinlov/kotlin-playground)
 
+## book
+
+- [official https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)
+- [chinese kotlin https://www.kotlincn.net/docs/reference/](https://www.kotlincn.net/docs/reference/)
+
 ## env
 
 | item | version | can use version |
@@ -26,8 +31,8 @@ make help
 # init check
 make init
 
-# test
-make dashboardTest
+# test all
+make dashboardTest designpatternsTest  
 ```
 
 # Module
@@ -39,3 +44,5 @@ dashboard of kotlin
 ## designpatterns
 
 design patterns of kotlin
+
+[Wikipedia https://en.wikipedia.org/wiki/Design_Patterns](https://en.wikipedia.org/wiki/Design_Patterns)
