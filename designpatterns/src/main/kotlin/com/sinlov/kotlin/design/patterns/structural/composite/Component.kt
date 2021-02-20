@@ -1,7 +1,5 @@
 package com.sinlov.kotlin.design.patterns.structural.composite
 
-import java.lang.IllegalArgumentException
-
 /**
  * for Object
  * @see <a href="https://en.wikipedia.org/wiki/Composite_pattern">Wikipedia Composite_pattern</a>
@@ -20,8 +18,12 @@ abstract class UserComponent {
     }
 }
 
-class ReportUser(private var report: String) : UserComponent() {
-    fun getReportUser(): String {
+interface IReportUser {
+    fun getReportUser(): String
+}
+
+class ReportUser(private var report: String) : UserComponent(), IReportUser {
+    override fun getReportUser(): String {
         return this.report
     }
 }
