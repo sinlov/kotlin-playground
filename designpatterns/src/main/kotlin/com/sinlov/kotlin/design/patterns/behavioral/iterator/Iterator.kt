@@ -1,8 +1,8 @@
 package com.sinlov.kotlin.design.patterns.behavioral.iterator
 
 /**
- * for Class
- * @see <a href="https://en.wikipedia.org/wiki/Interpreter_pattern">Wikipedia Interpreter_pattern</a>
+ * for Object
+ * @see <a href="https://en.wikipedia.org/wiki/Iterator_pattern">Wikipedia Iterator_pattern</a>
  */
 interface Iterator {
     fun hasNext(): Boolean
