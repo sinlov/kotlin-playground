@@ -1,4 +1,4 @@
-package com.sinlov.kotlin.design.patterns.behavioral.interpreter
+package com.sinlov.kotlin.design.patterns.behavioral.iterator
 
 class NameRepository : Container {
 

@@ -1,4 +1,4 @@
-package com.sinlov.kotlin.design.patterns.behavioral.interpreter
+package com.sinlov.kotlin.design.patterns.behavioral.iterator
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
