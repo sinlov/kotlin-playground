@@ -55,6 +55,7 @@ test {
 pitest {
     testPlugin = "Kotest"
     targetClasses = [
+            'com.sinlov.kotlin.foundation.*',
             'com.sinlov.kotlin.playground.dashboard.*',
     ]
     threads = Runtime.getRuntime().availableProcessors()
