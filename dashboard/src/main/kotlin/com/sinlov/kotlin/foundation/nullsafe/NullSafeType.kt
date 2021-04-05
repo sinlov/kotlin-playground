@@ -18,7 +18,7 @@ class NullSafeType {
         return null
     }
 
-    val f: String? = null
+    val f: String = "123"
 
     val gList: List<Int?> = listOf(1, 2, null, 4)
 }

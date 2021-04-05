@@ -48,7 +48,8 @@ class NullSafeTypeTest : StringSpec({
     }
 
     "f safe cast => as?" {
-        val tmp: String? = nullSafeType.f as? String
+        @Suppress("CAST_NEVER_SUCCEEDS")
+        val tmp: Int? = nullSafeType.f as? Int
         tmp shouldBe null
     }
 
