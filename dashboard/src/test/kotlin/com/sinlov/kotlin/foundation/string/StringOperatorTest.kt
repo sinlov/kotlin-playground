@@ -2,6 +2,7 @@ package com.sinlov.kotlin.foundation.string
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
+import io.kotest.matchers.shouldNotBe
 
 class StringOperatorTest : StringSpec({
 
@@ -61,4 +62,9 @@ class StringOperatorTest : StringSpec({
         (str1 === str4) shouldBe false
     }
 
+    "forEach" {
+        "The people's this.".forEach {
+            it shouldNotBe ""
+        }
+    }
 })
