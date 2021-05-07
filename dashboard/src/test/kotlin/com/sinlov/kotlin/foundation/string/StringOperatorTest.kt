@@ -67,4 +67,10 @@ class StringOperatorTest : StringSpec({
             it shouldNotBe ""
         }
     }
+
+    "number place holder" {
+        @Suppress("RedundantExplicitType") val cInt: Int = 9
+        String.format("%02d", cInt) shouldBe "09"
+        String.format("%03d", cInt) shouldBe "009"
+    }
 })
