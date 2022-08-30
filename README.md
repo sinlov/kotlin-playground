@@ -20,7 +20,7 @@
 | junit       | 4.12 | [![](https://img.shields.io/maven-central/v/junit/junit.svg?label=latest%20release)](https://search.maven.org/search?q=g:junit%20AND%20a:junit) |
 | kotest      | 4.3.2 | [![](https://img.shields.io/maven-central/v/io.kotest/kotest-framework-api-jvm.svg?label=latest%20release)](https://search.maven.org/search?q=kotest) |
 
-more package version see [package.gradle](package.gradle)
+more package version see [config.gradle](config.gradle)
 
 ## use
 
