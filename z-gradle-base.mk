@@ -11,7 +11,7 @@ ifeq ($(OS),Windows_NT)
   ENV_HOME_PATH ?= ${shell echo %UserProfile%}
   # ENV_NOW_TIME_FORMAT = $(shell echo %Date:~0,4%%Date:~5,2%%Date:~8,2%)
   ENV_NOW_TIME_FORMAT=$(shell echo %Date:~0,4%-%Date:~5,2%-%Date:~8,2%-%time:~0,2%-%time:~3,2%-%time:~6,2%)
-  ENV_GRADLE_WRAPPER_EXEC="gradlew.bat"
+  ENV_GRADLE_WRAPPER_EXEC=gradlew.bat
 else
   OS_UNAME ?= $(shell echo `uname`) # Linux Darwin
   OS_BIT ?= $(shell echo `uname -m`) # x86_64 arm64
@@ -32,7 +32,7 @@ else
     PLATFORM="Unix-Like"
     # do unix
   endif
-  ENV_GRADLE_WRAPPER_EXEC="./gradlew"
+  ENV_GRADLE_WRAPPER_EXEC=./gradlew
 endif
 
 # change by env
