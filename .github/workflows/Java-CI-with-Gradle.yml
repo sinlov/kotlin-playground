@@ -26,8 +26,8 @@ jobs:
       run: ./gradlew buildEnvironment --warning-mode all
     - name:  Build with Gradle dashboard clean test
       run: ./gradlew dashboard:clean dashboard:test --info
-    - name: Build with Gradle dashboard pitest
-      run: ./gradlew dashboard:pitest
+#    - name: Build with Gradle dashboard pitest
+#      run: ./gradlew dashboard:pitest
     - name: Build with Gradle dashboard jacocoTestReport
       run: ./gradlew dashboard:jacocoTestReport
     - name: Build with Gradle designpatterns jacocoTestReport

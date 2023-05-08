@@ -16,6 +16,7 @@ dependencies {
     // https://kotest.io/docs/quickstart
     // https://github.com/kotest/kotest-intellij-plugin
     testImplementation test_implement["io.kotest:kotest-runner-junit5"]
+    testImplementation test_implement["io.kotest:kotest-runner-junit5-jvm"]
     // Pitest https://kotest.io/docs/framework/plugins.html
     testImplementation test_implement["io.kotest:kotest-plugins-pitest"]
     // assertions library kotest

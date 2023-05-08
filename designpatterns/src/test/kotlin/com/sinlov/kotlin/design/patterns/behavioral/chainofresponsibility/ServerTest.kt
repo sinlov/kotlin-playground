@@ -1,6 +1,7 @@
 package com.sinlov.kotlin.design.patterns.behavioral.chainofresponsibility
 
 import io.kotest.assertions.timing.continually
+import io.kotest.assertions.until.fixed
 import io.kotest.core.spec.style.ShouldSpec
 import io.kotest.matchers.shouldBe
 import kotlin.time.ExperimentalTime
@@ -43,43 +44,43 @@ class ServerTest : ShouldSpec({
             }
             server.setMiddleware(throttlingMiddleware)
             var cnt = 0
-            continually(1.seconds, 1.seconds) {
+            continually(1.seconds, 1.seconds.fixed()) {
                 cnt++
                 val res = server.logIn(adminUserName, adminUserPass)
                 println("- $cnt user: $adminUserName , res: = $res at: ${System.currentTimeMillis()}")
                 res shouldBe true
             }
-            continually(1.seconds, 1.seconds) {
+            continually(1.seconds, 1.seconds.fixed()) {
                 cnt++
                 val res = server.logIn(userUserName, userUserPass)
                 println("- $cnt user: $userUserName , res: = $res at: ${System.currentTimeMillis()}")
                 res shouldBe true
             }
-            continually(1.seconds, 1.seconds) {
+            continually(1.seconds, 1.seconds.fixed()) {
                 cnt++
                 val res = server.logIn(userUserName, adminUserPass)
                 println("- $cnt user: $userUserName , res: = $res at: ${System.currentTimeMillis()}")
                 res shouldBe false
             }
-            continually(1.seconds, 1.seconds) {
+            continually(1.seconds, 1.seconds.fixed()) {
                 cnt++
                 val res = server.logIn(userUserName, userUserPass)
                 println("- $cnt user: $userUserName , res: = $res at: ${System.currentTimeMillis()}")
                 res shouldBe true
             }
-            continually(1.seconds, 1.seconds) {
+            continually(1.seconds, 1.seconds.fixed()) {
                 cnt++
                 val res = server.logIn("userName@example.com", userUserName)
                 println("- $cnt user: $userUserName , res: = $res at: ${System.currentTimeMillis()}")
                 res shouldBe false
             }
-            continually(1.seconds, 1.seconds) {
+            continually(1.seconds, 1.seconds.fixed()) {
                 cnt++
                 val res = server.logIn(userUserName, userUserName)
                 println("- $cnt user: $userUserName , res: = $res at: ${System.currentTimeMillis()}")
                 res shouldBe false
             }
-            continually(1.seconds, 1.seconds) {
+            continually(1.seconds, 1.seconds.fixed()) {
                 cnt++
                 val res = server.logIn(userUserName, userUserName)
                 println("- $cnt user: $userUserName , res: = $res at: ${System.currentTimeMillis()}")

@@ -8,18 +8,16 @@
 apply from: rootProject.file("config.gradle")
 
 buildscript {
-    ext.kotlin_version = '1.4.30'
 //    ext.jacoco_version = '0.8.6' // https://www.eclemma.org/jacoco/
 
     repositories {
 //        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
-        jcenter()
         mavenCentral()
 //        maven { url "https://plugins.gradle.org/m2/" }
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
         classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.5.1'
         classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.15.0"
     }
@@ -35,22 +33,22 @@ allprojects {
     apply plugin: 'java'
 
     tasks.withType(JavaCompile) {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
         options.encoding = "UTF-8"
     }
 
     apply plugin: "kotlin"
     compileKotlin {
         kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_1_8
+            jvmTarget = JavaVersion.VERSION_11
 //            freeCompilerArgs = ['-Xjsr305=strict']
 //            javaParameters = true
         }
     }
     compileTestKotlin {
         kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_1_8
+            jvmTarget = JavaVersion.VERSION_11
 //            freeCompilerArgs = ['-Xjsr305=strict']
 //            javaParameters = true
         }

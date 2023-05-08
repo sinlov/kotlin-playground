@@ -2,9 +2,9 @@ subprojects {
     apply plugin: "idea"
 
     ext {
-        kotlin_version = "1.4.21"
+        kotlin_version = "1.8.21"
         // https://kotest.io/docs/framework/framework.html
-        kotest_version = "4.3.2"
+        kotest_version = "5.5.5"
         // https://www.spekframework.org/
         spek_version = "2.0.9"
 
@@ -13,7 +13,7 @@ subprojects {
         ]
 
         test_implement = [
-                "junit:junit"                               : "junit:junit:4.12",
+                "junit:junit"                               : "junit:junit:4.13.2",
                 "org.junit.vintage:junit-vintage-engine"    : "org.junit.vintage:junit-vintage-engine:5.1.0",
                 "org.testng:testng"                         : "org.testng:testng:6.0.1",
                 "com.squareup.okhttp3:logging-interceptor"  : "com.squareup.okhttp3:logging-interceptor:3.8.0@jar",
@@ -21,9 +21,10 @@ subprojects {
                 // https://kotest.io/
                 // https://mvnrepository.com/artifact/io.kotest/kotest-runner-junit5
                 "io.kotest:kotest-runner-junit5"            : "io.kotest:kotest-runner-junit5:$kotest_version",
-                "io.kotest:kotest-plugins-pitest"           : "io.kotest:kotest-plugins-pitest:$kotest_version",
+                "io.kotest:kotest-runner-junit5-jvm"        : "io.kotest:kotest-runner-junit5-jvm:$kotest_version",
                 "io.kotest:kotest-assertions-core"          : "io.kotest:kotest-assertions-core:$kotest_version",
                 "io.kotest:kotest-property"                 : "io.kotest:kotest-property:$kotest_version",
+                "io.kotest:kotest-plugins-pitest"           : "io.kotest:kotest-plugins-pitest:4.4.3",
                 // https://mvnrepository.com/artifact/io.kotlintest/kotlintest-runner-junit5
                 "io.kotlintest:kotlintest-runner-junit5"    : "io.kotlintest:kotlintest-runner-junit5:3.4.2",
 

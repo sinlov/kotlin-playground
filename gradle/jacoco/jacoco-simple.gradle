@@ -27,7 +27,7 @@ def excludes = [
         '**/*_Factory*.*',
 ]
 
-def jacoco_version = "0.8.6"
+def jacoco_version = "0.8.8"
 
 jacoco {
     toolVersion = jacoco_version
@@ -64,4 +64,4 @@ jacocoTestCoverageVerification {
         }
     }
 }
-//jacocoTestReport.finalizedBy jacocoTestCoverageVerification
+jacocoTestReport.finalizedBy jacocoTestCoverageVerification

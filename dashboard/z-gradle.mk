@@ -1,37 +1,37 @@
 dashboardGradleName ?= dashboard
 
 dashboardTasks:
-	./gradlew :$(dashboardGradleName):tasks
+	${ENV_GRADLE_WRAPPER_EXEC} :$(dashboardGradleName):tasks
 
 dashboardTasksAll:
-	./gradlew :$(dashboardGradleName):tasks --all
+	${ENV_GRADLE_WRAPPER_EXEC} :$(dashboardGradleName):tasks --all
 
 dashboardClean:
-	./gradlew :$(dashboardGradleName):clean
+	${ENV_GRADLE_WRAPPER_EXEC} :$(dashboardGradleName):clean
 
 dashboardDependencies:
-	./gradlew :$(dashboardGradleName):dependencies
+	${ENV_GRADLE_WRAPPER_EXEC} :$(dashboardGradleName):dependencies
 
 dashboardDependDefault:
-	./gradlew :$(dashboardGradleName):dependencies --configuration default
+	${ENV_GRADLE_WRAPPER_EXEC} :$(dashboardGradleName):dependencies --configuration default
 
 dashboardDependCompileClasspath:
-	./gradlew :$(dashboardGradleName):dependencies --configuration compileClasspath
+	${ENV_GRADLE_WRAPPER_EXEC} :$(dashboardGradleName):dependencies --configuration compileClasspath
 
 dashboardDependentComponents:
-	./gradlew :$(dashboardGradleName):dependentComponents
+	${ENV_GRADLE_WRAPPER_EXEC} :$(dashboardGradleName):dependentComponents
 
 dashboardTest:
-	./gradlew :$(dashboardGradleName):test
+	${ENV_GRADLE_WRAPPER_EXEC} :$(dashboardGradleName):test
 
 dashboardTestInfo: dashboardClean
-	@./gradlew :$(dashboardGradleName):test --info
+	@${ENV_GRADLE_WRAPPER_EXEC} :$(dashboardGradleName):test --info
 
 dashboardJacocoTestReport:
-	./gradlew :$(dashboardGradleName):jacocoTestReport
+	${ENV_GRADLE_WRAPPER_EXEC} :$(dashboardGradleName):jacocoTestReport
 
 dashboardPiTest:
-	./gradlew :$(dashboardGradleName):pitest
+	${ENV_GRADLE_WRAPPER_EXEC} :$(dashboardGradleName):pitest
 
 help-dashboard-gradle:
 	@echo "=> $(dashboardGradleName)/z-gradle.mk : gradle $(dashboardGradleName) task"

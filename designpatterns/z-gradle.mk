@@ -1,37 +1,37 @@
 designpatternsGradleName ?= designpatterns
 
 designpatternsTasks:
-	./gradlew :$(designpatternsGradleName):tasks
+	${ENV_GRADLE_WRAPPER_EXEC} :$(designpatternsGradleName):tasks
 
 designpatternsTasksAll:
-	./gradlew :$(designpatternsGradleName):tasks --all
+	${ENV_GRADLE_WRAPPER_EXEC} :$(designpatternsGradleName):tasks --all
 
 designpatternsClean:
-	./gradlew :$(designpatternsGradleName):clean
+	${ENV_GRADLE_WRAPPER_EXEC} :$(designpatternsGradleName):clean
 
 designpatternsDependencies:
-	./gradlew :$(designpatternsGradleName):dependencies
+	${ENV_GRADLE_WRAPPER_EXEC} :$(designpatternsGradleName):dependencies
 
 designpatternsDependDefault:
-	./gradlew :$(designpatternsGradleName):dependencies --configuration default
+	${ENV_GRADLE_WRAPPER_EXEC} :$(designpatternsGradleName):dependencies --configuration default
 
 designpatternsDependCompileClasspath:
-	./gradlew :$(designpatternsGradleName):dependencies --configuration compileClasspath
+	${ENV_GRADLE_WRAPPER_EXEC} :$(designpatternsGradleName):dependencies --configuration compileClasspath
 
 designpatternsDependentComponents:
-	./gradlew :$(designpatternsGradleName):dependentComponents
+	${ENV_GRADLE_WRAPPER_EXEC} :$(designpatternsGradleName):dependentComponents
 
 designpatternsTest:
-	./gradlew :$(designpatternsGradleName):test
+	${ENV_GRADLE_WRAPPER_EXEC} :$(designpatternsGradleName):test
 
 designpatternsTestInfo: designpatternsClean
-	@./gradlew :$(designpatternsGradleName):test --info
+	@${ENV_GRADLE_WRAPPER_EXEC} :$(designpatternsGradleName):test --info
 
 designpatternsJacocoTestReport:
-	./gradlew :$(designpatternsGradleName):jacocoTestReport
+	${ENV_GRADLE_WRAPPER_EXEC} :$(designpatternsGradleName):jacocoTestReport
 
 designpatternsPiTest:
-	./gradlew :$(designpatternsGradleName):pitest
+	${ENV_GRADLE_WRAPPER_EXEC} :$(designpatternsGradleName):pitest
 
 help-designpatterns-gradle:
 	@echo "=> $(designpatternsGradleName)/z-gradle.mk : gradle $(designpatternsGradleName) task"
