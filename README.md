@@ -1,4 +1,5 @@
-[![Java-CI-with-Gradle](https://github.com/sinlov/kotlin-playground/workflows/Java-CI-with-Gradle/badge.svg?branch=main)](https://github.com/sinlov/kotlin-playground/actions?query=workflow%3AJava-CI-with-Gradle)
+[![gradle-matrix](https://github.com/sinlov/kotlin-playground/actions/workflows/gradle-matrix.yml/badge.svg?branch=main)](https://github.com/sinlov/kotlin-playground/actions/workflows/gradle-matrix.yml)
+[![gradle-codecov](https://github.com/sinlov/kotlin-playground/actions/workflows/gradle-codecov.yml/badge.svg)](https://github.com/sinlov/kotlin-playground/actions/workflows/gradle-codecov.yml)
 [![codecov](https://codecov.io/gh/sinlov/kotlin-playground/branch/main/graph/badge.svg)](https://codecov.io/gh/sinlov/kotlin-playground)
 
 # This is kotlin playground
