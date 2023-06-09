@@ -92,17 +92,17 @@ cleanGradleBuildAndIdea:
 	${ENV_GRADLE_WRAPPER_EXEC} clean cleanIdea
 
 cleanBuildCatch:
-	-@RM -r ./.gradle
+	-@$(RM) -r ./.gradle
 	$(info finish remove folder ./.gradle)
-	-@RM -r ./build
+	-@$(RM) -r ./build
 	$(info finish remove folder ./.build)
-	-@RM -r ./buildCache
+	-@$(RM) -r ./buildCache
 	$(info finish remove folder ./buildCache)
-	-@RM -r ./buildCacheDir
+	-@$(RM) -r ./buildCacheDir
 	$(info finish remove folder ./buildCacheDir)
 
 cleanAll: cleanGradleBuildAndIdea cleanBuildCatch
-	@echo "clean all build !"
+	@echo "clean all finish"
 
 buildEnvironment:
 	${ENV_GRADLE_WRAPPER_EXEC} buildEnvironment

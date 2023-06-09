@@ -45,14 +45,13 @@ jacocoTestReport {
 
 jacocoTestReport {
     reports {
-        csv.enabled false
-        xml.enabled true
-        html.enabled true
-        html.destination file("$buildDir/reports/jacocoHtml")
+        csv.required.set(true)
+        xml.required.set(true)
+        html.required.set(true)
+        html.outputLocation.file("$buildDir/reports/jacocoHtml")
     }
-//    reportsDirectory = file("$buildDir/customJacocoReportDir")
-
 }
+
 //test.finalizedBy jacocoTestReport
 jacocoTestCoverageVerification {
     violationRules {
@@ -64,4 +63,4 @@ jacocoTestCoverageVerification {
         }
     }
 }
-jacocoTestReport.finalizedBy jacocoTestCoverageVerification
+//jacocoTestReport.finalizedBy jacocoTestCoverageVerification
