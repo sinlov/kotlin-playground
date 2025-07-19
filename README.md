@@ -1,4 +1,4 @@
-[![gradle-matrix](https://github.com/sinlov/kotlin-playground/actions/workflows/gradle-matrix.yml/badge.svg?branch=main)](https://github.com/sinlov/kotlin-playground/actions/workflows/gradle-matrix.yml)
+[![ci](https://github.com/sinlov/kotlin-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/sinlov/kotlin-playground/actions/workflows/ci.yml)
 [![gradle-codecov](https://github.com/sinlov/kotlin-playground/actions/workflows/gradle-codecov.yml/badge.svg)](https://github.com/sinlov/kotlin-playground/actions/workflows/gradle-codecov.yml)
 [![codecov](https://codecov.io/gh/sinlov/kotlin-playground/branch/main/graph/badge.svg)](https://codecov.io/gh/sinlov/kotlin-playground)
 
