@@ -1,0 +1,66 @@
+name: ci
+
+on:
+  push:
+    paths-ignore:
+      - '**/README.md'
+      - '**/doc-dev/*'
+    branches:
+      - 'main'
+      - 'release-*'
+      - '*-feature-*'
+      - '*-enhancement-*'
+      - '*-hotfix-*'
+      - '*-bug-*'
+      - '*-documentation-*'
+      - 'BF-*'
+      - 'FE-*'
+      - 'PU-*'
+      - 'DOC-*'
+    tags:
+      - '*' # Push events to matching *, i.e. 1.0.0 v1.0, v20.15.10
+  pull_request:
+    paths-ignore:
+      - '**/README.md'
+    types: # https://docs.github.com/actions/using-workflows/events-that-trigger-workflows#pull_request
+      - opened
+      - reopened
+      - closed
+    # branches:
+    #   - 'main'
+    #   - 'release-*'
+    #   - 'DOC-*'
+    #   - 'hotfix-*'
+
+permissions:
+  contents: write
+  discussions: write
+
+jobs:
+  version:
+    name: version
+    uses: ./.github/workflows/version.yml
+
+  gradle-matrix:
+    name: gradle-matrix
+    needs:
+      - version
+    uses: ./.github/workflows/gradle-matrix.yml
+
+  ### tag to release start
+
+  deploy-tag:
+    needs:
+      - version
+      # - android-release-platform
+    name: deploy-tag
+    uses: ./.github/workflows/deploy-tag.yml
+    if: startsWith(github.ref, 'refs/tags/')
+    secrets: inherit
+    with:
+      prerelease: true
+      tag_name: ${{ needs.version.outputs.tag_name }}
+      tag_changes: ${{ needs.version.outputs.cc_changes }}
+      # download_artifact_name: android-release
+
+  ### tag to release end
